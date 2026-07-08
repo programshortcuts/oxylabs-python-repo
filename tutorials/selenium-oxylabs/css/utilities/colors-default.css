@@ -1,0 +1,11 @@
+.b {color: blue;}
+.lb {color: lightskyblue;}
+.rb {color: royalblue;}
+.gr {color: green !important;}
+/* .gr-bor {border: 3px solid green !important;} */
+.g{color: gold;}
+.m {color: magenta;}
+.o {color: orange;}
+.r{color: red;}
+.t{color: rgb(222, 81, 56) !important; font-weight: 888;}
+.ws{color: whitesmoke !important;}

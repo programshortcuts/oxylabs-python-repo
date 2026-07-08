@@ -1,0 +1,37 @@
+:root{
+    --bcolor: rgb(133, 148, 141);
+    --txtcolor: color: rgb(47, 88, 139);
+    --bkgrnd: rgb(167, 195, 182);
+}
+body{
+    background-color: var(--bkgrnd)
+}
+.page-header,
+.nav-bar-lesson-title,
+.side-bar{
+    background-color: var(--bcolor);
+}
+
+.nav-bar-lesson-title{
+    /* background-color: var(--bcolor); */
+    
+}
+.side-bar .drop-down,
+.page-header a,
+.side-bar ul>li>a {
+    color: var(--txtcolor)
+}
+.page-header a:visited{
+    color: black !important;
+}
+.copy-code {
+    background-color: whitesmoke;
+}
+
+#endNxtBtn, #endNxtBtn, #prevBtn, #prevBtn{
+    background-color: var(--bcolor);
+}
+.step-content .b,
+.step-txt .b{
+    color: rgb(66,167,267);
+}
