@@ -61,10 +61,14 @@ addEventListener('keydown', e => {
             const cleaned = word.replace(/^[^a-z0-9]+/i, '');
             if (!cleaned) return false;
 
-            if (/^\d+$/.test(cleaned) && /^[0]+[1-9]/.test(cleaned)) {
-                return cleaned[0] === letter
-                    || cleaned.match(/[1-9]/)?.[0] === letter;
+            const leadingDigitsMatch = cleaned.match(/^0*(\d+)/);
+            if (leadingDigitsMatch) {
+                const numericKey = leadingDigitsMatch[1][0];
+                const remainder = cleaned.slice(leadingDigitsMatch[0].length);
+                const firstTextChar = remainder.replace(/^[^a-z]+/i, '').charAt(0);
+                return numericKey === letter || firstTextChar === letter;
             }
+
             return cleaned[0] === letter;
         });
     });
