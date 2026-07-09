@@ -1,60 +1,70 @@
 <!-- 04.html -->
 <div id="targetDiv">
-        <header>
-            <h3 id="">video 5- PROBLEMS FIXED</h3>
-            <p>
-                <span class="r">In summary, drivers are out of date, the bottom work</span>
-            </p>
-        </header>
-    <div tabindex="0" class="step-float"
-        data-video="https://www.youtube.com/watch?v=BQo4HPfkieM&list=PLO-SpLojKeZumJOr4PqauiA7NOEQNPIRL&index=5"
-        data-timestamp="1300">
-        <h4>2 - <span class="t">DID NOT WORK</span> + more problems</h4>
-        <div class="step-vid ">
-            <video preload="none" playsinline webkit-playsinline poster="side-bar-links-pages/04/04-03/images/01.png"
-            src="side-bar-links-pages/04/04-03/images/01.mov"></video>
-            <div class="vid-cntrl-btns">
-                <button class="fwdBtn">&lt;&lt;</button>
-                <button class="playbtn">></button>
-                <button class="rwdBtn">>></button>
-            </div>
-        </div>
-        <div class="step-txt">
-            <h5><strong>ChatGpt:</strong></h5>
-            <p>
-                I actually recommend something easier
-                
-                Nowadays, Selenium downloads the correct driver automatically.
-                
-                First update Selenium:
-            </p>
-            <div class="code-container">
-                <code tabindex="0" class="copy-code">
-pip install -U selenium</code>
-            </div>
-            <div class="code-container">
-                <pre tabindex="0" class="copy-code">
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import time
-
-driver = webdriver.Chrome()
-
-driver.get("https://bing.com")
-
-driver.find_element(By.ID, "sb_form_q").send_keys("selenium")
-
-driver.find_element(By.ID, "search_icon").click()
-
-time.sleep(7)
-
-driver.quit()</pre>
-            </div>
-            <p>
-                🥳 , it works, save this, this tutorial is gonna be really time consuming
-            </p>
-            
-        </div>
+    <header>
+        <h3>part 1 - start venv,
+        <br> <code>pip install selenium</code>
+        basic script</h3>
         
+    </header>
+    <div class="steps-container">
+        <div tabindex="0" class="step-float"data-video="https://www.youtube.com/watch?v=6zqYkPe-qJc"
+            data-timestamp="94">
+            <h4>1 - start venv / <code>pip install selenium</code>
+            <div class="step-img">
+                <img loading="lazy" src="side-bar-links-pages/01/images/01.png" alt="">
+            </div>
+            <div class="step-txt">
+                <h5>Mac</h5>
+                <div class="code-container">
+                    <code tabindex="0" class="copy-code">
+    python -m venv venv</code>
+                </div>
+                <div class="code-container">
+                    <code tabindex="0" class="copy-code">
+    source venv/bin/activate</code>
+                </div>
+                <div class="code-container">
+                    <code tabindex="0" class="copy-code">
+    pip install selenium</code>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        <div tabindex="0" class="step-float" data-video="https://www.youtube.com/watch?v=6zqYkPe-qJc" data-timestamp="120">
+            <h4>2 - basic script</code>
+                <div class="step-vid ">
+                    <video preload="none" playsinline webkit-playsinline poster="side-bar-links-pages/01/images/02.png"
+                        src="side-bar-links-pages/01/images/02.mov"></video>
+                    <div class="vid-cntrl-btns">
+                        <button tabindex="-1" class="fwdBtn">&lt;&lt;</button>
+                        <button tabindex="-1" class="playbtn">></button>
+                        <button tabindex="-1" class="rwdBtn">>></button>
+                    </div>
+                </div>
+            <div class="step-txt">
+                <h5>2- basic script</h5>
+                <p>
+                    basic script,
+                </p>
+                <p>
+                    <span class="t">** We no longer need to download drivers</span>, just invoke browser function, 
+                    for example <code class="sg">Chrome()</code>, then, use the <code class="g">get()</code> method, 
+                    with the desired starting url,
+                    <br>
+                    <code class="o">https://sandbox.oxylabs.io/products</code>
+                    <br>as the argument for <code class="g">get()</code>
+                </p>
+                <div class="code-container">
+                    <pre tabindex="0" class="copy-code">
+import time</pre>
+from selenium import webdriver
+driver = webdriver.<span class="sg">Chrome()</span>
+driver.<span class="g">get('</span><span class="o">https://sandbox.oxylabs.io/products</span><span class="g">')</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

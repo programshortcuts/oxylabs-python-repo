@@ -18,7 +18,7 @@
 .side-bar li {
     font-size: 1rem;
 }
-.side-bar ul>li>ul>li>a {
-    /* font-size: 80%; */
+.side-bar code{
+    font-size: 80%;
     
 }
