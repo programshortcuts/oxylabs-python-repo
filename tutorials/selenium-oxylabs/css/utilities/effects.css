@@ -57,6 +57,3 @@ body.dark-mode .step-float:active {
     padding: 1% 3%;
     width: 100%;
 }
-.side-bar a:active,.side-bar a:focus{
-    color: black !important;
-}

@@ -63,9 +63,8 @@
     .side-bar-links-container > ul >li > ul >li {
         /* font-size: 60% !important; */
     }
-    .side-bar li a,
-    .side-bar li {
-        font-size: .8rem !important;
+    .side-bar ul li a{
+        /* font-size: .86rem; */
     }
     .step-content p {
         font-size: 75%;   
