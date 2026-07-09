@@ -73,7 +73,7 @@ body.dark-mode .highlight {
 }
 .dark-mode .copy-code {
     border: 1px solid white !important;
-    color: var(--bg-primary) !important;
+    color: var(--bg-primary) ;
 }
 
 

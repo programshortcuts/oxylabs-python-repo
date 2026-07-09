@@ -7,12 +7,13 @@
     outline: none
 }
 .copy-code:active,.copy-code:focus{
-    box-shadow: 2px 2px 10px lightblue;
+    box-shadow: 2px 2px 10px lightblue !important;
     /* background-color: rgb(144, 126, 126); */
     margin-top: -1%;
     margin-bottom: 5%;
     box-shadow: -1px 0 7px 3px var(--bcolor);
     outline: none;
+    padding: 0 1%;
     transition: all .3;
 }
 #mainTargetDiv:focus,

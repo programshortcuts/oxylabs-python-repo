@@ -18,6 +18,8 @@ export function initStepNavigation({ mainTargetDiv }) {
     if (!mainTargetDiv) return;
 
     steps = [...mainTargetDiv.querySelectorAll('.step-float')];
+    const copyCodes = [...mainTargetDiv.querySelectorAll('.copy-code')];
+    
     currentIndex = 0;
 
     steps.forEach((step, index) => {
@@ -60,7 +62,11 @@ export function initStepNavigation({ mainTargetDiv }) {
 
         step.addEventListener('keydown', (e) => handleStepKey(e, step, index));
     });
-
+    copyCodes.forEach(el => {
+        el.addEventListener('focus', e => {
+            denlargeAllImages()
+        })
+    })
     syncStep();
 }
 /* =========================

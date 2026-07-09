@@ -21,15 +21,21 @@
             </div>
             <div class="step-txt">
                 <p>
-                    to scrape elements, we need to wait for elements to load, 
+                    add <code class="m"></code>
+                    and <code class="m"></code>
                 </p>
+                <div class="code-container">
+                    <code tabindex="0" class="copy-code m">
+from selenium.webdriver.chrome.options import Options</code>
+                </div>
                 <p>
-                    import <code class="sg">WebDriverWait</code> and <code class="sg">By</code>
-                    and the <code class="sg"> expected_conditions</code> <code>as</code> <code class="sg">EC</code>
+                    and
                 </p>
-                <p>
-                    Then. target the html with <code><span class="sg">By</span>.((<span class="lb">CSS_SELECTOR</span></code>
-                </p>
+                <div class="code-container">
+                    <code tabindex="0" class="copy-code m">
+options.add_argument("--headless")</code>
+                </div>
+                
                 
                 
             </div>
@@ -37,9 +43,10 @@
                 <pre tabindex="0" class="copy-code">
 import time
 from selenium import webdriver
-from selenium.webdriver.common.by import <span class="sg">By</span>
-from selenium.webdriver.support.ui import <span class="sg">WebDriverWait</span>
-from selenium.webdriver.support import <span class="sg">expected_conditions</span> as <span class="sg">EC</span>
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+<span class="m"></span>
 
 driver = webdriver.Chrome()
 driver.get('https://sandbox.oxylabs.io/products')
