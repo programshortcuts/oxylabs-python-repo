@@ -14,6 +14,7 @@
     text-decoration: none;
 }
 
+.side-bar code,
 .side-bar li a,
 .side-bar li {
     font-size: .7rem;

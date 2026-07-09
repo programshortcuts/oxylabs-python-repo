@@ -1,40 +1,40 @@
 <!-- 05-02.html -->
 <div id="targetDiv">
     <header>
-        <h3 id="">video 5-3 <span class="t">Problems / Summary</span></h3>
-        <p>
-            <span class="r">In summary, drivers are out of date, the bottom work</span>
-        </p>
+        <h3 >part 2 - scrape data from html elements</h3>
+        
     </header>
+    <div class="steps-container">
 
-    <div tabindex="0" class="step-float"
-        data-video="https://www.youtube.com/watch?v=BQo4HPfkieM&list=PLO-SpLojKeZumJOr4PqauiA7NOEQNPIRL&index=5"
-        data-timestamp="94">
-        <h4>2 - <span class="t">DID NOT WORK</span> + more problems</h4>
-        <div class="step-img">
-            <img loading="lazy" src="side-bar-links-pages/01/images/01.png" alt="">
+        <div tabindex="0" class="step-float"
+        data-video="https://www.youtube.com/watch?v=6zqYkPe-qJc"
+        data-timestamp="190">
+        <h4>2 - </h4>
+            <div class="step-img">
+                <img loading="lazy" src="side-bar-links-pages/01/images/01.png" alt="">
+            </div>
+            <div class="step-txt">
+                <p>
+                    to scrape elements, we need to wait for elements to load, 
+                </p>
+                <p>
+                    import <code class="sg">WebDriverWait</code> and <code class="sg">By</code>
+                    and the <code class="sg"> expected_conditions</code> <code>as</code> <code class="sg">EC</code>
+                </p>
+                <p>
+                    Then. target the html with <code><span class="sg">By</span>.((<span class="lb">CSS_SELECTOR</span></code>
+                </p>
+                <div class="code-container">
+                    <pre tabindex="0" class="copy-code">
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import <span class="sg">By</span>
+from selenium.wedriver.support import <span class="sg">WebDriverWait</span>
+</pre>
+                </div>
+                
+            </div>
+            
         </div>
-        <div class="step-txt">
-            <h5>Mac</h5>
-            <div class="code-container">
-                <code tabindex="0" class="copy-code">
-            python -m venv venv</code>
-            </div>
-            <div class="code-container">
-                <code tabindex="0" class="copy-code">
-            source venv/bin/activate</code>
-            </div>
-            <div class="code-container">
-                <code tabindex="0" class="copy-code">
-            pip install selenium</code>
-            </div>
-        
-        
-        
-        </div>
-        
     </div>
-
-
-    
 </div>
