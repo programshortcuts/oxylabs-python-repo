@@ -23,3 +23,8 @@
     /* font-size: 80%; */
     
 }
+
+.line-thru{
+    text-decoration: line-through;
+    color: tomato;
+}

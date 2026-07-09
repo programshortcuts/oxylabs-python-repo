@@ -1,8 +1,11 @@
 <!-- 05-02.html -->
 <div id="targetDiv">
     <header>
-        <h3 >part 3 - headless </h3>
-        
+        <h3 >part 4 - multiple pages / scrolling </h3>
+    <p class="r">
+        I ran into errors,
+    </p>       
+    <p class="t">Look at part 5 to see</p>
     </header>
     <div class="steps-container">
 
@@ -10,43 +13,28 @@
             data-video="https://www.youtube.com/watch?v=6zqYkPe-qJc"
             data-timestamp="344">
             <h4>1  </h4>
-            <!-- <div class="step-vid ">
-                <video preload="none" playsinline webkit-playsinline poster="side-bar-links-pages/02/images/01.png"
-                src="side-bar-links-pages/02/images/01.mov"></video>
-                <div class="vid-cntrl-btns">
-                    <button class="fwdBtn">&lt;&lt;</button>
-                    <button class="playbtn">></button>
-                    <button class="rwdBtn">>></button>
-                </div>
-            </div> -->
+            
             <div class="step-txt">
                 <p>
-                    add
-                </p>
-                <div class="code-container">
-                    <code tabindex="0" class="copy-code m">
-from selenium.webdriver.chrome.options import Options</code>
-                </div>
+                    This is how you scrape from multiple pages, and infinite scrolling pages,
+                </p>    
                 <p>
-                    and
-                </p>
-                <div class="code-container">
-                    <pre tabindex="0" class="copy-code m">
-options = Options()
-options.add_argument("--headless")</pre>
-                </div>
-                <p>
-                    also,
+                    Change url to recipe website and searching for chicken recipes
                 </p>
                 <div class="code-container">
                     <code tabindex="0" class="copy-code">
-driver = webdriver.Chrome(<span class="m">options=options</span>)
-</code>
+https://www.allrecipes.com/search?q=chicken</code>
                 </div>
-                
-                
-                
-                
+                <p>
+                    the for loop with <code class="m">range(2)</code> will only get the first 
+                    two pages in this example
+                </p>         
+                <p>
+                    the <code class="g">driver.execute_script("arguments[0].scrollIntoView({block: 'center'})", next_btn)</code>
+                    and the one below it with <div class="g">click()</div>
+                    allow the site to wait for elements to load, keep in mind, sites changes, this didnt' work, but part 5 shows
+                    a working script from chat gpt, with try and except
+                </p>       
             </div>
             <div class="code-container clear">
                 <pre tabindex="0" class="copy-code">
@@ -55,32 +43,30 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-<span class="m">from selenium.webdriver.chrome.options import Options</span>
+from selenium.webdriver.chrome.options import Options
 
-options = Options()
-options.add_argument("--headless")
-driver = webdriver.Chrome(<span class="m">options=options</span>)
-driver.get('https://sandbox.oxylabs.io/products')
+driver = webdriver.Chrome()
+driver.get('https://www.allrecipes.com/search?q=chicken')
 
-WebDriverWait(driver,10).until(
-    EC.presence_of_all_elements_located((By.CSS_SELECTOR, '.product-card'))
-)
+wait = WebDriverWait(driver,10)
 
-results = []
 
-cards = driver.find_elements(By.CSS_SELECTOR,".product-card")
-for card in cards:
-    title = card.find_element(By.CSS_SELECTOR,".title").text.strip()
-    price = card.find_element(By.CSS_SELECTOR,".price-wrapper").text.strip()
-    results.append(
-        {
-        "title":title,
-        "price": price,
-        }
+<span class="line-thru">
+
+accept_btn = wait.until(
+    EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler"))
     )
-print(results)
-
+    accept_btn.click()
+</span>
 time.sleep(1)
+
+for i in <span class="m">range(2)</span>:
+    next_btn = wait.until(
+    EC.presence_of_element_located((By.CSS_SELECTOR,"li.mntl-pagination__next a"))
+    )
+    <span class="g">driver.execute_script("arguments[0].scrollIntoView({block: 'center'})", next_btn)
+    driver.execute_script("arguments[0].click()",next_btn)</span>
+time.sleep(2)
 driver.quit()
 
             </pre>

@@ -1,0 +1,86 @@
+<!-- 05-02.html -->
+<div id="targetDiv">
+    <header>
+        <h3 >part 5 - finale working chatgpt </h3>
+           
+    </header>
+    <div class="steps-container">
+
+        <div tabindex="0" class="step-float"
+            data-video="https://www.youtube.com/watch?v=6zqYkPe-qJc"
+            data-timestamp="344">
+            <h4>1  </h4>
+            
+            <div class="step-txt">
+                <p>chat gpt got it working with this</p>
+            </div>
+            <div class="code-container clear">
+                <pre tabindex="0" class="copy-code">
+import time
+
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# Open Chrome
+driver = webdriver.Chrome()
+
+# Create a wait object (used throughout the script)
+wait = WebDriverWait(driver, 10)
+
+# Open the website
+driver.get("https://www.allrecipes.com/search?q=chicken")
+
+# -------------------------------------------------------
+# Try to accept the cookie popup (if it appears)
+# -------------------------------------------------------
+try:
+    accept_btn = WebDriverWait(driver, 5).until(
+        EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler"))
+    )
+    accept_btn.click()
+    print("✅ Cookie popup accepted.")
+
+except TimeoutException:
+    print("ℹ️ No cookie popup appeared.")
+
+# Small pause so you can watch what's happening
+time.sleep(1)
+
+# -------------------------------------------------------
+# Click the Next button two times
+# -------------------------------------------------------
+for i in range(2):
+
+    print(f"Moving to page {i + 2}")
+
+    next_btn = wait.until(
+        EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, "li.mntl-pagination__next a")
+        )
+    )
+
+    # Scroll until the button is visible
+    driver.execute_script(
+        "arguments[0].scrollIntoView({block: 'center'});",
+        next_btn
+    )
+
+    # Click using JavaScript
+    driver.execute_script(
+        "arguments[0].click();",
+        next_btn
+    )
+
+    # Wait so you can watch the page change
+    time.sleep(2)
+
+driver.quit()
+            </pre>
+            </div>
+            
+        </div>
+    </div>
+</div>
