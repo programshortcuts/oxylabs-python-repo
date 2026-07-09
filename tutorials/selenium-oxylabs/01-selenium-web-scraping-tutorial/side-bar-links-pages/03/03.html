@@ -1,0 +1,73 @@
+<!-- 05-02.html -->
+<div id="targetDiv">
+    <header>
+        <h3 >part 3 - headless </h3>
+        
+    </header>
+    <div class="steps-container">
+
+        <div tabindex="0" class="step-float"
+            data-video="https://www.youtube.com/watch?v=6zqYkPe-qJc"
+            data-timestamp="190">
+            <h4>2 - </h4>
+            <div class="step-vid ">
+                <video preload="none" playsinline webkit-playsinline poster="side-bar-links-pages/02/images/01.png"
+                src="side-bar-links-pages/02/images/01.mov"></video>
+                <div class="vid-cntrl-btns">
+                    <button class="fwdBtn">&lt;&lt;</button>
+                    <button class="playbtn">></button>
+                    <button class="rwdBtn">>></button>
+                </div>
+            </div>
+            <div class="step-txt">
+                <p>
+                    to scrape elements, we need to wait for elements to load, 
+                </p>
+                <p>
+                    import <code class="sg">WebDriverWait</code> and <code class="sg">By</code>
+                    and the <code class="sg"> expected_conditions</code> <code>as</code> <code class="sg">EC</code>
+                </p>
+                <p>
+                    Then. target the html with <code><span class="sg">By</span>.((<span class="lb">CSS_SELECTOR</span></code>
+                </p>
+                
+                
+            </div>
+            <div class="code-container clear">
+                <pre tabindex="0" class="copy-code">
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import <span class="sg">By</span>
+from selenium.webdriver.support.ui import <span class="sg">WebDriverWait</span>
+from selenium.webdriver.support import <span class="sg">expected_conditions</span> as <span class="sg">EC</span>
+
+driver = webdriver.Chrome()
+driver.get('https://sandbox.oxylabs.io/products')
+
+WebDriverWait(driver,10).until(
+    EC.presence_of_all_elements_located((By.CSS_SELECTOR, '.product-card'))
+)
+
+results = []
+
+cards = driver.find_elements(By.CSS_SELECTOR,".product-card")
+for card in cards:
+    title = card.find_element(By.CSS_SELECTOR,".title").text.strip()
+    price = card.find_element(By.CSS_SELECTOR,".price-wrapper").text.strip()
+    results.append(
+        {
+        "title":title,
+        "price": price,
+        }
+    )
+print(results)
+
+time.sleep(1)
+driver.quit()
+
+            </pre>
+            </div>
+            
+        </div>
+    </div>
+</div>

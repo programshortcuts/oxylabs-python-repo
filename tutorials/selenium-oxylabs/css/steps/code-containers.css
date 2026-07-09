@@ -1,20 +1,34 @@
-.code-container>textarea.copy-code,
-.code-container>pre.copy-code {
+.step-float .code-container {
+    width: fit-content;
+    min-width: 100%;
+}
+.step-float .code-container > pre.copy-code{
+    width: 100%;
+    flex-grow: 1;
+
+}
+.step-txt .code-container {
+    max-width: 90%;
+    max-height: 62vh;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.step-txt .code-container>textarea.copy-code,
+.step-txt .code-container>pre.copy-code {
     font-size: 80%;
     border: 1px solid black;
-    overflow: auto;
-    /* allow both directions */
-    max-width: 90%;
-    /* prevent overflow outside container */
-    max-height: 62vh;
-    /* or any height you like */
-    white-space: pre;   
-    /* keep formatting but allow scroll */
+    overscroll-behavior: auto;
+    white-space: pre;
     display: block;
     margin: 2%;
-    width: fit-content;
-    min-width: 300px;
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
     padding: 1% 0;
     padding-left: 1%;
     border-radius: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
 }

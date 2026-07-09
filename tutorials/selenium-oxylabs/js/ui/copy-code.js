@@ -1,6 +1,11 @@
+import { denlargeAllImages } from "./toggle-img-sizes.js"
 export function addCopyCode() {
     const copyCodes = document.querySelectorAll('.copy-code')
     copyCodes.forEach(el => {
+        el.addEventListener('focus', e => {
+            denlargeAllImages()
+
+        })
         el.addEventListener('keydown', e => {
             if (e.key == 'c' && e.metaKey) {
                 console.log('yes')
