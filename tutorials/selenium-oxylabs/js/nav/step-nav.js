@@ -29,7 +29,7 @@ export function initStepNavigation({ mainTargetDiv }) {
         step.addEventListener('focus', () => {
             lastStep = step;
             currentIndex = index;
-
+            denlargeAllImages()
             // changeTutorialLink(step); // ✅ ALWAYS SYNC HERE
 
             step.scrollIntoView({

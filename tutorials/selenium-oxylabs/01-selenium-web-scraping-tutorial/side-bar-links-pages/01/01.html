@@ -3,16 +3,15 @@
     <header>
         <h3>part 1 - start venv,
         <br> <code>pip install selenium</code>
-        basic script</h3>
-        
+        basic script</h3>        
     </header>
     
     
     <div class="steps-container">
         <div tabindex="0" class="step-float"
-            data-video="https://www.youtube.com/watch?v=BQo4HPfkieM&list=PLO-SpLojKeZumJOr4PqauiA7NOEQNPIRL&index=5"
+            data-video="https://www.youtube.com/watch?v=6zqYkPe-qJc"
             data-timestamp="94">
-            <h4>2 - <span class="t">DID NOT WORK</span> + more problems</h4>
+            <h4>2 - start venv / pip install selenium</h4>
             <div class="step-img">
                 <img loading="lazy" src="side-bar-links-pages/01/images/01.png" alt="">
             </div>
@@ -37,9 +36,9 @@
         
         </div>
         <div tabindex="0" class="step-float"
-            data-video="https://www.youtube.com/watch?v=BQo4HPfkieM&list=PLO-SpLojKeZumJOr4PqauiA7NOEQNPIRL&index=5"
+            data-video="https://www.youtube.com/watch?v=6zqYkPe-qJc"
             data-timestamp="160">
-            <h4>2 - <span class="t">DID NOT WORK</span> + more problems</h4>
+            <h4>2 - basic selenium driver script</h4>
                 <div class="step-vid ">
                     <video preload="none" playsinline webkit-playsinline poster="side-bar-links-pages/01/images/02.png"
                         src="side-bar-links-pages/01/images/02.mov"></video>
@@ -64,11 +63,13 @@
                     </p>
                     <div class="code-container">
                         <pre tabindex="0" class="copy-code">
-                import time</pre>
-                        from selenium import webdriver
-                        driver = webdriver.<span class="sg">Chrome()</span>
-                        driver.<span class="g">get('</span><span class="o">https://sandbox.oxylabs.io/products</span><span
-                            class="g">')</span>
+import time
+from selenium import webdriver
+driver = webdriver.<span class="sg">Chrome()</span>
+driver.<span class="g">get('</span><span class="o">https://sandbox.oxylabs.io/products</span><span class="g">')</span>
+time.sleep(2)
+driver.quit()
+</pre>
                     </div>
                 </div>
         
